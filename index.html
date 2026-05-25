@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MALESRU.ID - Jasa Joki Tugas</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Font Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins',sans-serif;
+    }
+
+    body{
+      background:#f5f7ff;
+      overflow-x:hidden;
+      color:#1f2937;
+    }
+
+    :root{
+      --primary:#6C63FF;
+      --secondary:#8B85FF;
+      --dark:#111827;
+    }
+
+    .navbar{
+      background:white;
+      box-shadow:0 5px 20px rgba(0,0,0,0.05);
+    }
+
+    .navbar-brand{
+      font-weight:800;
+      font-size:1.5rem;
+      color:var(--primary)!important;
+    }
+
+    .hero{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      padding-top:100px;
+      position:relative;
+    }
+
+    .hero::before{
+      content:'';
+      position:absolute;
+      width:350px;
+      height:350px;
+      background:rgba(108,99,255,.15);
+      border-radius:50%;
+      top:-100px;
+      right:-100px;
+      filter:blur(40px);
+    }
+
+    .hero h1{
+      font-size:3.5rem;
+      font-weight:800;
+      line-height:1.2;
+    }
+
+    .hero p{
+      color:#6b7280;
+      margin-top:20px;
+      line-height:1.8;
+    }
+
+    .btn-main{
+      background:var(--primary);
+      border:none;
+      padding:14px 28px;
+      border-radius:15px;
+      color:white;
+      font-weight:600;
+      transition:.3s;
+      box-shadow:0 10px 30px rgba(108,99,255,.3);
+    }
+
+    .btn-main:hover{
+      background:#574eff;
+      transform:translateY(-3px);
+      color:white;
+    }
+
+    .hero-card{
+      background:white;
+      border-radius:30px;
+      padding:20px;
+      box-shadow:0 20px 40px rgba(0,0,0,.08);
+    }
+
+    .hero-card img{
+      width:100%;
+      border-radius:20px;
+    }
+
+    .section-title{
+      font-size:2rem;
+      font-weight:700;
+    }
+
+    .section-subtitle{
+      color:#6b7280;
+      margin-top:10px;
+    }
+
+    .service-card{
+      background:white;
+      border-radius:25px;
+      padding:30px;
+      transition:.3s;
+      height:100%;
+      box-shadow:0 10px 30px rgba(0,0,0,.05);
+    }
+
+    .service-card:hover{
+      transform:translateY(-8px);
+    }
+
+    .service-icon{
+      width:70px;
+      height:70px;
+      background:rgba(108,99,255,.1);
+      border-radius:20px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:2rem;
+      color:var(--primary);
+      margin-bottom:20px;
+    }
+
+    .pricing-card{
+      background:white;
+      border-radius:25px;
+      padding:40px 30px;
+      text-align:center;
+      box-shadow:0 10px 30px rgba(0,0,0,.05);
+      height:100%;
+    }
+
+    .pricing-card.active{
+      background:linear-gradient(135deg,var(--primary),var(--secondary));
+      color:white;
+      transform:scale(1.03);
+    }
+
+    .pricing-card.active p,
+    .pricing-card.active li{
+      color:white;
+    }
+
+    .price{
+      font-size:3rem;
+      font-weight:800;
+      margin:20px 0;
+    }
+
+    .pricing-card ul{
+      list-style:none;
+      padding:0;
+    }
+
+    .pricing-card ul li{
+      margin-bottom:12px;
+      color:#6b7280;
+    }
+
+    .testimonial{
+      background:white;
+      border-radius:25px;
+      padding:25px;
+      box-shadow:0 10px 30px rgba(0,0,0,.05);
+      height:100%;
+    }
+
+    .avatar{
+      width:55px;
+      height:55px;
+      border-radius:50%;
+      background:var(--primary);
+      color:white;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:700;
+    }
+
+    .cta{
+      background:linear-gradient(135deg,var(--primary),var(--secondary));
+      padding:60px 30px;
+      border-radius:30px;
+      color:white;
+    }
+
+    footer{
+      background:#111827;
+      color:white;
+      padding:50px 0 20px;
+      margin-top:80px;
+    }
+
+    .footer-link{
+      text-decoration:none;
+      color:rgba(255,255,255,.7);
+      display:block;
+      margin-bottom:10px;
+    }
+
+    .footer-link:hover{
+      color:white;
+    }
+
+    @media(max-width:768px){
+
+      .hero{
+        text-align:center;
+        padding-top:120px;
+        padding-bottom:50px;
+      }
+
+      .hero h1{
+        font-size:2.3rem;
+      }
+
+      .hero-card{
+        margin-top:40px;
+      }
+
+      .btn-main{
+        width:100%;
+      }
+
+      .pricing-card.active{
+        transform:none;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg fixed-top py-3">
+  <div class="container">
+    <a class="navbar-brand" href="#">MALESRU.ID</a>
+
+    <button class="navbar-toggler border-0" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3 text-center mt-3 mt-lg-0">
+
+        <li class="nav-item">
+          <a class="nav-link" href="#layanan">Layanan</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#harga">Harga</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#testimoni">Testimoni</a>
+        </li>
+
+        <li class="nav-item mt-2 mt-lg-0">
+          <a href="https://wa.me/6285168995320" class="btn btn-main">
+            Order Sekarang
+          </a>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="row align-items-center gy-5">
+
+      <div class="col-lg-6">
+
+        <span class="badge bg-primary-subtle text-primary px-3 py-2 rounded-pill mb-3">
+          #1 Jasa Joki Online
+        </span>
+
+        <h1>
+          Tugas Numpuk? <br>
+          Serahin Aja ke <span style="color:var(--primary)">MALESRU.ID</span>
+        </h1>
+
+        <p>
+          Jasa joki tugas terpercaya untuk sekolah, kuliah, coding,
+          desain, PPT, hingga tugas deadline mepet.
+          Cepat, aman, dan harga mahasiswa.
+        </p>
+
+        <div class="d-flex flex-column flex-sm-row gap-3 mt-4">
+
+          <a href="https://wa.me/6285168995320" class="btn btn-main">
+            <i class="bi bi-whatsapp"></i>
+            Chat WhatsApp
+          </a>
+
+          <a href="#layanan" class="btn btn-outline-dark rounded-4 px-4 py-3 fw-semibold">
+            Lihat Layanan
+          </a>
+
+        </div>
+
+        <div class="row mt-5 text-center text-sm-start">
+
+          <div class="col-4">
+            <h3 class="fw-bold">5K+</h3>
+            <small class="text-secondary">Tugas Selesai</small>
+          </div>
+
+          <div class="col-4">
+            <h3 class="fw-bold">98%</h3>
+            <small class="text-secondary">Pelanggan Puas</small>
+          </div>
+
+          <div class="col-4">
+            <h3 class="fw-bold">24/7</h3>
+            <small class="text-secondary">Fast Response</small>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="col-lg-6">
+        <div class="hero-card">
+          <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop" alt="">
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- LAYANAN -->
+<section id="layanan" class="py-5">
+  <div class="container">
+
+    <div class="text-center mb-5">
+      <h2 class="section-title">Layanan Kami</h2>
+      <p class="section-subtitle">
+        Semua kebutuhan tugas dan project kamu bisa kami bantu.
+      </p>
+    </div>
+
+    <div class="row g-4">
+
+      <div class="col-md-6 col-lg-3">
+        <div class="service-card">
+
+          <div class="service-icon">
+            <i class="bi bi-file-earmark-text"></i>
+          </div>
+
+          <h5 class="fw-bold">Joki Tugas</h5>
+
+          <p class="text-secondary">
+            Makalah, essay, laporan, dan tugas sekolah/kuliah.
+          </p>
+
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-3">
+        <div class="service-card">
+
+          <div class="service-icon">
+            <i class="bi bi-code-slash"></i>
+          </div>
+
+          <h5 class="fw-bold">Joki Coding</h5>
+
+          <p class="text-secondary">
+            Website, aplikasi, debugging, dan project coding.
+          </p>
+
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-3">
+        <div class="service-card">
+
+          <div class="service-icon">
+            <i class="bi bi-easel"></i>
+          </div>
+
+          <h5 class="fw-bold">Desain & PPT</h5>
+
+          <p class="text-secondary">
+            Presentasi modern dan desain profesional.
+          </p>
+
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-3">
+        <div class="service-card">
+
+          <div class="service-icon">
+            <i class="bi bi-lightning-charge"></i>
+          </div>
+
+          <h5 class="fw-bold">Express Service</h5>
+
+          <p class="text-secondary">
+            Deadline mepet? Kami siap bantu cepat.
+          </p>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- HARGA -->
+<section id="harga" class="py-5">
+  <div class="container">
+
+    <div class="text-center mb-5">
+      <h2 class="section-title">Paket Harga</h2>
+      <p class="section-subtitle">
+        Pilih paket sesuai kebutuhan kamu.
+      </p>
+    </div>
+
+    <div class="row g-4 justify-content-center">
+
+      <div class="col-lg-4 col-md-6">
+        <div class="pricing-card">
+
+          <h5 class="fw-bold">Basic</h5>
+
+          <div class="price">50K</div>
+
+          <ul>
+            <li>1 Tugas Ringan</li>
+            <li>Revisi 1x</li>
+            <li>Standard Process</li>
+          </ul>
+
+          <a href="#" class="btn btn-outline-dark rounded-4 w-100 py-3">
+            Pilih Paket
+          </a>
+
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6">
+        <div class="pricing-card active">
+
+          <span class="badge bg-light text-dark rounded-pill px-3 py-2 mb-3">
+            Best Seller
+          </span>
+
+          <h5 class="fw-bold">Premium</h5>
+
+          <div class="price">150K</div>
+
+          <ul>
+            <li>Unlimited Revisi</li>
+            <li>Fast Process</li>
+            <li>Support Prioritas</li>
+          </ul>
+
+          <a href="#" class="btn btn-light rounded-4 w-100 py-3 fw-semibold">
+            Pilih Paket
+          </a>
+
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6">
+        <div class="pricing-card">
+
+          <h5 class="fw-bold">Express</h5>
+
+          <div class="price">250K</div>
+
+          <ul>
+            <li>Deadline Kilat</li>
+            <li>Prioritas Utama</li>
+            <li>24 Jam Support</li>
+          </ul>
+
+          <a href="#" class="btn btn-outline-dark rounded-4 w-100 py-3">
+            Pilih Paket
+          </a>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONI -->
+<section id="testimoni" class="py-5">
+  <div class="container">
+
+    <div class="text-center mb-5">
+      <h2 class="section-title">Testimoni</h2>
+      <p class="section-subtitle">
+        Mereka sudah mempercayai MALESRU.ID
+      </p>
+    </div>
+
+    <div class="row g-4">
+
+      <div class="col-md-6 col-lg-4">
+        <div class="testimonial">
+
+          <div class="d-flex align-items-center gap-3 mb-3">
+
+            <div class="avatar">A</div>
+
+            <div>
+              <h6 class="fw-bold mb-0">Ayuk</h6>
+              <small class="text-secondary">Mahasiswa</small>
+            </div>
+
+          </div>
+
+          <p class="text-secondary">
+            “Pelayanan cepat dan hasil tugasnya rapi banget. bikin skripsi bab iv,v sama vi sehari selesai huhuu, ditunggu joki slanjutnya ya kk”
+          </p>
+
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="testimonial">
+
+          <div class="d-flex align-items-center gap-3 mb-3">
+
+            <div class="avatar">S</div>
+
+            <div>
+              <h6 class="fw-bold mb-0">Sinta</h6>
+              <small class="text-secondary">Siswi SMA</small>
+            </div>
+
+          </div>
+
+          <p class="text-secondary">
+            “PPT desainnya modern dan keren banget.”
+          </p>
+
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="testimonial">
+
+          <div class="d-flex align-items-center gap-3 mb-3">
+
+            <div class="avatar">R</div>
+
+            <div>
+              <h6 class="fw-bold mb-0">Rizky</h6>
+              <small class="text-secondary">Freelancer</small>
+            </div>
+
+          </div>
+
+          <p class="text-secondary">
+            “Recommended buat yang deadline mepet.”
+          </p>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="py-5">
+  <div class="container">
+
+    <div class="cta text-center">
+
+      <h2 class="fw-bold mb-3">
+        Deadline Tinggal Hitungan Jam?
+      </h2>
+
+      <p class="mb-4 opacity-75">
+        Tenang, MALESRU.ID siap bantu tugas kamu kapan aja.
+      </p>
+
+      <a href="https://wa.me/6281234567890" class="btn btn-light px-5 py-3 rounded-4 fw-semibold">
+        <i class="bi bi-whatsapp"></i>
+        Order Sekarang
+      </a>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+
+    <div class="row g-4">
+
+      <div class="col-lg-5">
+
+        <h3 class="fw-bold">MALESRU.ID</h3>
+
+        <p class="opacity-75 mt-3">
+          Platform jasa joki terpercaya dan profesional.
+        </p>
+
+      </div>
+
+      <div class="col-lg-3 col-6">
+
+        <h6 class="fw-bold mb-3">Menu</h6>
+
+        <a href="https://wa.me/6281234567890" class="footer-link">Home</a>
+        <a href="#layanan" class="footer-link">Layanan</a>
+        <a href="#harga" class="footer-link">Harga</a>
+
+      </div>
+
+      <div class="col-lg-4 col-6">
+
+        <h6 class="fw-bold mb-3">Kontak</h6>
+
+        <a href="" class="footer-link">
+          <i class="bi bi-whatsapp"></i> WhatsApp
+        </a>
+
+        <a href="https://www.instagram.com/malesru.id" class="footer-link">
+          <i class="bi bi-instagram"></i> Instagram
+        </a>
+
+        <a href="rikoraditya010@gmail.com" class="footer-link">
+          <i class="bi bi-envelope"></i> Email
+        </a>
+
+      </div>
+
+    </div>
+
+    <hr class="border-secondary my-4">
+
+    <div class="text-center opacity-75 small">
+      © 2026 MALESRU.ID — All Rights Reserved.
+    </div>
+
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
