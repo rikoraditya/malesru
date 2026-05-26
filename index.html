@@ -353,6 +353,31 @@
 
     }
 
+    .rating-stars{
+  font-size:15px;
+  white-space:nowrap;
+}
+
+.rating-number{
+  font-size:1.75rem;
+}
+
+@media(max-width:768px){
+
+  .rating-mobile{
+    gap:3px !important;
+  }
+
+  .rating-stars{
+    font-size:10px;
+  }
+
+  .rating-number{
+    font-size:1.1rem;
+  }
+
+}
+
   </style>
 </head>
 
@@ -465,27 +490,29 @@
 
   </div>
 
-  <div class="col-4">
+<div class="col-4">
 
-    <h3 class="fw-bold d-flex align-items-center justify-content-center justify-content-sm-start gap-2">
+  <h3 class="fw-bold d-flex align-items-center justify-content-center justify-content-sm-start gap-1 rating-mobile">
 
+    <span class="rating-number">
       5.0
+    </span>
 
-      <span class="text-warning fs-6">
-        <i class="bi bi-star-fill"></i>
-        <i class="bi bi-star-fill"></i>
-        <i class="bi bi-star-fill"></i>
-        <i class="bi bi-star-fill"></i>
-        <i class="bi bi-star-fill"></i>
-      </span>
+    <span class="text-warning rating-stars">
+      <i class="bi bi-star-fill"></i>
+      <i class="bi bi-star-fill"></i>
+      <i class="bi bi-star-fill"></i>
+      <i class="bi bi-star-fill"></i>
+      <i class="bi bi-star-fill"></i>
+    </span>
 
-    </h3>
+  </h3>
 
-    <small class="text-secondary">
-      Rating Pelanggan
-    </small>
+  <small class="text-secondary">
+    Rating Pelanggan
+  </small>
 
-  </div>
+</div>
 
   <div class="col-4">
 
@@ -647,7 +674,7 @@
           </ul>
 <!-- BASIC -->
 
-        <a href="https://wa.me/6285168995320?text=Halo%20MALESRU.ID,%20saya%20ingin%20order%20paket%20Basic%20(50K)." 
+        <a href="https://wa.me/6285168995320?text=Halo%20MALESRU.ID,%20saya%20ingin%20order%20paket%20Basic%20(100K)." 
 class="btn btn-outline-dark rounded-4 w-100 py-3">
 
   Pilih Paket
@@ -679,7 +706,7 @@ class="btn btn-outline-dark rounded-4 w-100 py-3">
           </ul>
 <!-- PREMIUM -->
 
-<a href="https://wa.me/6285168995320?text=Halo%20MALESRU.ID,%20saya%20ingin%20order%20paket%20Premium%20(150K)." 
+<a href="https://wa.me/6285168995320?text=Halo%20MALESRU.ID,%20saya%20ingin%20order%20paket%20Premium%20(200K)." 
 class="btn btn-light rounded-4 w-100 py-3 fw-semibold">
 
   Pilih Paket
