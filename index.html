@@ -15,17 +15,12 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
   <style>
+
     *{
       margin:0;
       padding:0;
       box-sizing:border-box;
       font-family:'Poppins',sans-serif;
-    }
-
-    body{
-      background:#f5f7ff;
-      overflow-x:hidden;
-      color:#1f2937;
     }
 
     :root{
@@ -34,9 +29,25 @@
       --dark:#111827;
     }
 
+    html,
+    body{
+      overflow-x:hidden;
+      scroll-behavior:smooth;
+    }
+
+    body{
+      background:#f5f7ff;
+      color:#1f2937;
+    }
+
+    /* NAVBAR */
+
     .navbar{
       background:white;
-      box-shadow:0 5px 20px rgba(0,0,0,0.05);
+      width:100%;
+      padding:15px 0;
+      box-shadow:0 5px 20px rgba(0,0,0,.05);
+      z-index:999;
     }
 
     .navbar-brand{
@@ -45,11 +56,62 @@
       color:var(--primary)!important;
     }
 
+    .nav-link{
+      color:#374151!important;
+      font-weight:500;
+      transition:.3s;
+    }
+
+    .nav-link:hover{
+      color:var(--primary)!important;
+    }
+
+    .navbar-toggler{
+      border:none!important;
+      box-shadow:none!important;
+      padding:6px 10px;
+    }
+
+    .navbar-toggler:focus{
+      box-shadow:none!important;
+    }
+
+    .navbar-collapse{
+      transition:.3s;
+    }
+
+    /* BUTTON */
+
+    .btn-main{
+      background:var(--primary);
+      border:none;
+      padding:14px 28px;
+      border-radius:15px;
+      color:white;
+      font-weight:600;
+      transition:.3s;
+      box-shadow:0 10px 30px rgba(108,99,255,.3);
+      text-decoration:none;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+    }
+
+    .btn-main:hover{
+      background:#574eff;
+      transform:translateY(-3px);
+      color:white;
+    }
+
+    /* HERO */
+
     .hero{
       min-height:100vh;
       display:flex;
       align-items:center;
-      padding-top:100px;
+      padding-top:140px;
+      padding-bottom:60px;
       position:relative;
     }
 
@@ -77,23 +139,6 @@
       line-height:1.8;
     }
 
-    .btn-main{
-      background:var(--primary);
-      border:none;
-      padding:14px 28px;
-      border-radius:15px;
-      color:white;
-      font-weight:600;
-      transition:.3s;
-      box-shadow:0 10px 30px rgba(108,99,255,.3);
-    }
-
-    .btn-main:hover{
-      background:#574eff;
-      transform:translateY(-3px);
-      color:white;
-    }
-
     .hero-card{
       background:white;
       border-radius:30px;
@@ -104,7 +149,10 @@
     .hero-card img{
       width:100%;
       border-radius:20px;
+      display:block;
     }
+
+    /* SECTION */
 
     .section-title{
       font-size:2rem;
@@ -115,6 +163,8 @@
       color:#6b7280;
       margin-top:10px;
     }
+
+    /* SERVICE */
 
     .service-card{
       background:white;
@@ -142,6 +192,8 @@
       margin-bottom:20px;
     }
 
+    /* PRICING */
+
     .pricing-card{
       background:white;
       border-radius:25px;
@@ -149,6 +201,11 @@
       text-align:center;
       box-shadow:0 10px 30px rgba(0,0,0,.05);
       height:100%;
+      transition:.3s;
+    }
+
+    .pricing-card:hover{
+      transform:translateY(-5px);
     }
 
     .pricing-card.active{
@@ -178,6 +235,8 @@
       color:#6b7280;
     }
 
+    /* TESTIMONIAL */
+
     .testimonial{
       background:white;
       border-radius:25px;
@@ -198,12 +257,16 @@
       font-weight:700;
     }
 
+    /* CTA */
+
     .cta{
       background:linear-gradient(135deg,var(--primary),var(--secondary));
       padding:60px 30px;
       border-radius:30px;
       color:white;
     }
+
+    /* FOOTER */
 
     footer{
       background:#111827;
@@ -223,45 +286,103 @@
       color:white;
     }
 
+    /* MOBILE */
+
     @media(max-width:768px){
 
+      .navbar{
+        padding:12px 0;
+      }
+
+      .navbar-collapse{
+        background:white;
+        margin-top:15px;
+        padding:20px;
+        border-radius:20px;
+        box-shadow:0 10px 30px rgba(0,0,0,.08);
+      }
+
+      .navbar-nav{
+        gap:10px;
+      }
+
+      .navbar .btn-main{
+        width:100%;
+      }
+
       .hero{
+        min-height:auto;
         text-align:center;
-        padding-top:120px;
-        padding-bottom:50px;
+        padding-top:140px;
+        padding-bottom:60px;
       }
 
       .hero h1{
-        font-size:2.3rem;
+        font-size:2.2rem;
+        line-height:1.3;
+      }
+
+      .hero p{
+        font-size:.95rem;
       }
 
       .hero-card{
-        margin-top:40px;
+        margin-top:20px;
+      }
+
+      .hero-card img{
+        height:260px;
+        object-fit:cover;
       }
 
       .btn-main{
         width:100%;
       }
 
+      .price{
+        font-size:2.3rem;
+      }
+
       .pricing-card.active{
         transform:none;
       }
+
+      .cta{
+        padding:40px 20px;
+      }
+
     }
 
   </style>
 </head>
+
 <body>
 
 <!-- NAVBAR -->
-<nav class="navbar navbar-expand-lg fixed-top py-3">
-  <div class="container">
-    <a class="navbar-brand" href="#">MALESRU.ID</a>
 
-    <button class="navbar-toggler border-0" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+<nav class="navbar navbar-expand-lg fixed-top">
+
+  <div class="container">
+
+    <a class="navbar-brand" href="#">
+      MALESRU.ID
+    </a>
+
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation">
+
       <span class="navbar-toggler-icon"></span>
+
     </button>
 
     <div class="collapse navbar-collapse" id="navbarNav">
+
       <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3 text-center mt-3 mt-lg-0">
 
         <li class="nav-item">
@@ -277,19 +398,27 @@
         </li>
 
         <li class="nav-item mt-2 mt-lg-0">
-          <a href="https://wa.me/6285168995320" class="btn btn-main">
+
+          <a href="https://wa.me/6285168995320" class="btn-main">
             Order Sekarang
           </a>
+
         </li>
 
       </ul>
+
     </div>
+
   </div>
+
 </nav>
 
 <!-- HERO -->
+
 <section class="hero">
+
   <div class="container">
+
     <div class="row align-items-center gy-5">
 
       <div class="col-lg-6">
@@ -300,7 +429,10 @@
 
         <h1>
           Tugas Numpuk? <br>
-          Serahin Aja ke <span style="color:var(--primary)">MALESRU.ID</span>
+          Serahin Aja ke
+          <span style="color:var(--primary)">
+            MALESRU.ID
+          </span>
         </h1>
 
         <p>
@@ -311,7 +443,7 @@
 
         <div class="d-flex flex-column flex-sm-row gap-3 mt-4">
 
-          <a href="https://wa.me/6285168995320" class="btn btn-main">
+          <a href="https://wa.me/6285168995320" class="btn-main">
             <i class="bi bi-whatsapp"></i>
             Chat WhatsApp
           </a>
@@ -344,29 +476,41 @@
       </div>
 
       <div class="col-lg-6">
+
         <div class="hero-card">
-          <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop" alt="">
+
+          <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop" alt="Hero Image">
+
         </div>
+
       </div>
 
     </div>
+
   </div>
+
 </section>
 
 <!-- LAYANAN -->
+
 <section id="layanan" class="py-5">
+
   <div class="container">
 
     <div class="text-center mb-5">
+
       <h2 class="section-title">Layanan Kami</h2>
+
       <p class="section-subtitle">
         Semua kebutuhan tugas dan project kamu bisa kami bantu.
       </p>
+
     </div>
 
     <div class="row g-4">
 
       <div class="col-md-6 col-lg-3">
+
         <div class="service-card">
 
           <div class="service-icon">
@@ -380,9 +524,11 @@
           </p>
 
         </div>
+
       </div>
 
       <div class="col-md-6 col-lg-3">
+
         <div class="service-card">
 
           <div class="service-icon">
@@ -396,9 +542,11 @@
           </p>
 
         </div>
+
       </div>
 
       <div class="col-md-6 col-lg-3">
+
         <div class="service-card">
 
           <div class="service-icon">
@@ -412,9 +560,11 @@
           </p>
 
         </div>
+
       </div>
 
       <div class="col-md-6 col-lg-3">
+
         <div class="service-card">
 
           <div class="service-icon">
@@ -428,26 +578,35 @@
           </p>
 
         </div>
+
       </div>
 
     </div>
+
   </div>
+
 </section>
 
 <!-- HARGA -->
+
 <section id="harga" class="py-5">
+
   <div class="container">
 
     <div class="text-center mb-5">
+
       <h2 class="section-title">Paket Harga</h2>
+
       <p class="section-subtitle">
         Pilih paket sesuai kebutuhan kamu.
       </p>
+
     </div>
 
     <div class="row g-4 justify-content-center">
 
       <div class="col-lg-4 col-md-6">
+
         <div class="pricing-card">
 
           <h5 class="fw-bold">Basic</h5>
@@ -465,9 +624,11 @@
           </a>
 
         </div>
+
       </div>
 
       <div class="col-lg-4 col-md-6">
+
         <div class="pricing-card active">
 
           <span class="badge bg-light text-dark rounded-pill px-3 py-2 mb-3">
@@ -489,9 +650,11 @@
           </a>
 
         </div>
+
       </div>
 
       <div class="col-lg-4 col-md-6">
+
         <div class="pricing-card">
 
           <h5 class="fw-bold">Express</h5>
@@ -509,26 +672,35 @@
           </a>
 
         </div>
+
       </div>
 
     </div>
+
   </div>
+
 </section>
 
 <!-- TESTIMONI -->
+
 <section id="testimoni" class="py-5">
+
   <div class="container">
 
     <div class="text-center mb-5">
+
       <h2 class="section-title">Testimoni</h2>
+
       <p class="section-subtitle">
         Mereka sudah mempercayai MALESRU.ID
       </p>
+
     </div>
 
     <div class="row g-4">
 
       <div class="col-md-6 col-lg-4">
+
         <div class="testimonial">
 
           <div class="d-flex align-items-center gap-3 mb-3">
@@ -543,13 +715,15 @@
           </div>
 
           <p class="text-secondary">
-            “Pelayanan cepat dan hasil tugasnya rapi banget. bikin skripsi bab iv,v sama vi sehari selesai huhuu, ditunggu joki slanjutnya ya kk”
+            “Pelayanan cepat dan hasil tugasnya rapi banget.”
           </p>
 
         </div>
+
       </div>
 
       <div class="col-md-6 col-lg-4">
+
         <div class="testimonial">
 
           <div class="d-flex align-items-center gap-3 mb-3">
@@ -568,9 +742,11 @@
           </p>
 
         </div>
+
       </div>
 
       <div class="col-md-6 col-lg-4">
+
         <div class="testimonial">
 
           <div class="d-flex align-items-center gap-3 mb-3">
@@ -589,14 +765,19 @@
           </p>
 
         </div>
+
       </div>
 
     </div>
+
   </div>
+
 </section>
 
 <!-- CTA -->
+
 <section class="py-5">
+
   <div class="container">
 
     <div class="cta text-center">
@@ -609,18 +790,23 @@
         Tenang, MALESRU.ID siap bantu tugas kamu kapan aja.
       </p>
 
-      <a href="https://wa.me/6281234567890" class="btn btn-light px-5 py-3 rounded-4 fw-semibold">
+      <a href="https://wa.me/6285168995320" class="btn btn-light px-5 py-3 rounded-4 fw-semibold">
+
         <i class="bi bi-whatsapp"></i>
         Order Sekarang
+
       </a>
 
     </div>
 
   </div>
+
 </section>
 
 <!-- FOOTER -->
+
 <footer>
+
   <div class="container">
 
     <div class="row g-4">
@@ -639,7 +825,7 @@
 
         <h6 class="fw-bold mb-3">Menu</h6>
 
-        <a href="https://wa.me/6281234567890" class="footer-link">Home</a>
+        <a href="#" class="footer-link">Home</a>
         <a href="#layanan" class="footer-link">Layanan</a>
         <a href="#harga" class="footer-link">Harga</a>
 
@@ -649,7 +835,7 @@
 
         <h6 class="fw-bold mb-3">Kontak</h6>
 
-        <a href="" class="footer-link">
+        <a href="https://wa.me/6285168995320" class="footer-link">
           <i class="bi bi-whatsapp"></i> WhatsApp
         </a>
 
@@ -657,7 +843,7 @@
           <i class="bi bi-instagram"></i> Instagram
         </a>
 
-        <a href="rikoraditya010@gmail.com" class="footer-link">
+        <a href="mailto:rikoraditya010@gmail.com" class="footer-link">
           <i class="bi bi-envelope"></i> Email
         </a>
 
@@ -672,7 +858,10 @@
     </div>
 
   </div>
+
 </footer>
+
+<!-- Bootstrap JS -->
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
